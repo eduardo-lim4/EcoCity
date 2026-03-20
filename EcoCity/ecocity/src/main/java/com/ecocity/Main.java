@@ -243,8 +243,9 @@ public class Main {
             altura = 500;
         }
 
-        Image img = new ImageIcon(caminho).getImage()
-                .getScaledInstance(largura, altura, Image.SCALE_SMOOTH);
+       Image img = new ImageIcon( Main.class.getResource("/" + caminho)).getImage()
+       .getScaledInstance(largura, altura, Image.SCALE_SMOOTH);
+                
 
         fundo.setIcon(new ImageIcon(img));
     }

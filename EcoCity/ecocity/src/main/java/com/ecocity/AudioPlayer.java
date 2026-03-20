@@ -3,7 +3,6 @@ package com.ecocity;
 //CRIA UMA INSTÂNCIA QUE CHAMA O ARQUIVO .WAV
 
 import javax.sound.sampled.*;
-import java.io.File;
 
 public class AudioPlayer {
 
@@ -11,8 +10,9 @@ public class AudioPlayer {
 
     public void tocarLoop(String caminho) {
         try {
-            File arquivo = new File(caminho);
-            AudioInputStream audio = AudioSystem.getAudioInputStream(arquivo);
+            AudioInputStream audio = AudioSystem.getAudioInputStream(
+            AudioPlayer.class.getResource("/Flash-Casanova-Lease.wav")
+            );
 
             clip = AudioSystem.getClip();
             clip.open(audio);
