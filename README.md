@@ -135,7 +135,3 @@ Este projeto foi desenvolvido como trabalho acadêmico com foco em:
 
 ---
 
-## 👨‍💻 Autor
-
-Projeto desenvolvido por Eduardo Lima
-Contribuições são bem-vindas!
