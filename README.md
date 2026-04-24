@@ -66,7 +66,7 @@ O jogo possui:
 ### 1. Clonar o repositório
 
 ```bash
-git clone https://github.com/SEU-USUARIO/EcoCity.git
+git clone https://github.com/eduardo-lim4/EcoCity.git
 ```
 
 ### 2. Entrar na pasta
