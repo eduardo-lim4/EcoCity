@@ -19,23 +19,27 @@ public class Tutorial {
                 break;
 
             case 1:
-                mensagem = "Indústria aumenta dinheiro, mas gera poluição.";
+                mensagem = "Ações como Indústria e Mineração geram dinheiro,\nmas aumentam a poluição e prejudicam o ambiente.";
                 break;
 
             case 2:
-                mensagem = "Árvores reduzem poluição, mas custam dinheiro.";
+                mensagem = "Ações como Árvores, Parque e Energia Solar\nmelhoram o ambiente, mas custam dinheiro.";
                 break;
 
             case 3:
-                mensagem = "Se a poluição chegar a 100, você perde!";
+                mensagem = "Rodovias atraem população, mas também\naumentam poluição. Equilibre suas escolhas!";
                 break;
 
             case 4:
-                mensagem = "Se o meio ambiente chegar a 0, você perde!";
+                mensagem = "Se a poluição chegar a 100% ou o meio\nambiente a 0%, você perde!";
                 break;
 
             case 5:
-                mensagem = "Tente sobreviver o máximo de anos possível!\nBoa sorte!";
+                mensagem = "A cada 10 anos, os eventos ficam mais intensos.\nSua pontuação considera anos, ambiente, população e dinheiro.";
+                break;
+
+            case 6:
+                mensagem = "Fique atento às dicas educativas nos eventos!\nBoa sorte, prefeito!";
                 break;
         }
 
@@ -50,7 +54,7 @@ public class Tutorial {
                 "Próximo"
         );
 
-        if (opcao == 0 && etapa < 5) {
+        if (opcao == 0 && etapa < 6) {
             etapa++;
             mostrar(frame);
         }

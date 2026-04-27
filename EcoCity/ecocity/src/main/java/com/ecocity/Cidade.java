@@ -15,5 +15,7 @@ public class Cidade {
     public void atualizar() {
         poluicao = limitar(poluicao);
         meioAmbiente = limitar(meioAmbiente);
+        if (populacao < 0) populacao = 0;
+        // dinheiro pode ficar negativo (causa Game Over)
     }
 }

@@ -9,17 +9,21 @@ public class AudioPlayer {
     private Clip clip;
 
     public void tocarLoop(String caminho) {
-        try {
-            AudioInputStream audio = AudioSystem.getAudioInputStream(
-            AudioPlayer.class.getResource("/Flash-Casanova-Lease.wav")
-            );
+        // Fecha clip anterior se existir
+        if (clip != null) {
+            clip.stop();
+            clip.close();
+        }
+
+        try (AudioInputStream audio = AudioSystem.getAudioInputStream(
+                AudioPlayer.class.getResource("/" + caminho))) {
 
             clip = AudioSystem.getClip();
             clip.open(audio);
 
-            // 🔊 volume mais baixo
+            // Volume mais baixo
             FloatControl volume = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
-            volume.setValue(-20.0f); // diminui volume (ajuste se quiser)
+            volume.setValue(-20.0f);
 
             clip.loop(Clip.LOOP_CONTINUOUSLY);
             clip.start();
@@ -32,6 +36,7 @@ public class AudioPlayer {
     public void parar() {
         if (clip != null) {
             clip.stop();
+            clip.close();
         }
     }
 }
