@@ -1,137 +1,154 @@
 # 🌱 EcoCity
 
-EcoCity é um jogo desenvolvido em Java com foco em **educação ambiental**, onde o jogador gerencia uma cidade e precisa equilibrar crescimento econômico e sustentabilidade.
+EcoCity é um jogo desenvolvido em **Java** com foco em **educação ambiental**, onde o jogador assume o papel de gestor de uma cidade e precisa equilibrar crescimento econômico e sustentabilidade.
 
 ---
 
-## 🎮 Como funciona o jogo
+## 🎮 Sobre o jogo
 
-Você controla uma cidade e deve tomar decisões estratégicas:
+No EcoCity, você toma decisões estratégicas que impactam diretamente:
 
-* 🏭 **Construir indústria**
+* 🏙️ População
+* 💰 Dinheiro
+* 🌫️ Poluição
+* 🌿 Meio ambiente
 
-  * * Dinheiro
-  * * População
-  * * Poluição
-
-* 🌳 **Plantar árvores**
-
-  * * Dinheiro
-  * * Poluição
-  * * Meio ambiente
+Cada escolha traz consequências — crescer rápido pode destruir o ambiente, enquanto preservar demais pode limitar o desenvolvimento.
 
 ---
 
-## ⚖️ Objetivo
+## 🧠 Objetivo
 
-Manter a cidade equilibrada pelo maior tempo possível.
+Alcançar 100 anos mantendo o equilíbrio da cidade.
 
 Você perde se:
 
-* ☠️ Poluição chegar a 100%
-* ☠️ Meio ambiente chegar a 0%
-* 💸 Dinheiro ficar negativo
+* ❌ Poluição chegar a 100%
+* ❌ Meio ambiente chegar a 0%
 
 ---
 
-## 🌍 Sistema do jogo
+## ⚙️ Mecânicas do jogo
 
-O jogo possui:
+### 🏗️ Ações disponíveis
 
-* 🎲 Eventos aleatórios (enchentes, queimadas, etc.)
-* 📊 Sistema de barras (poluição e meio ambiente)
-* 🎨 Interface gráfica com Java Swing
-* 🎬 Animações suaves
-* 🎵 Música ambiente
-* 🌫️ (em desenvolvimento) efeitos visuais
-
----
-
-## 🧠 Estrutura do projeto
-
-| Arquivo              | Função                             |
-| -------------------- | ---------------------------------- |
-| `Main.java`          | Interface gráfica e controle geral |
-| `Game.java`          | Lógica principal do jogo           |
-| `Cidade.java`        | Dados da cidade                    |
-| `Evento.java`        | Eventos aleatórios                 |
-| `AudioPlayer.java`   | Sistema de música                  |
-| `RoundedButton.java` | Botões customizados                |
-| `Tutorial.java`      | Tutorial inicial                   |
+* Construir indústria → 💰 + dinheiro | 🌫️ + poluição
+* Expandir mineração → 💰 + dinheiro | 🌫️ + poluição
+* Construir rodovia → 👥 + população | 🌫️ + poluição
+* Plantar árvores → 🌿 + meio ambiente | 💸 custo
+* Construir parque → 🌿 + meio ambiente | 👥 + população
+* Energia solar → 🌿 + meio ambiente | 🌫️ - poluição
 
 ---
 
-## 💻 Como rodar o projeto
+### 📈 Sistema de progressão
 
-### 1. Clonar o repositório
+* A cada **10 anos**, os eventos ficam mais difíceis
+* O jogo exige cada vez mais estratégia
+
+---
+
+### 🧮 Sistema de pontuação
+
+A pontuação considera:
+
+* Tempo sobrevivido (anos)
+* Nível de meio ambiente
+* Nível de poluição
+* População
+* Dinheiro acumulado
+
+---
+
+## 🧪 Tutorial interativo
+
+O jogo conta com um sistema de tutorial em etapas que ensina:
+
+* Como as ações afetam a cidade
+* Como equilibrar economia e sustentabilidade
+* Condições de vitória e derrota
+
+---
+
+## 🎨 Interface
+
+* Interface gráfica com **Java Swing**
+* HUD com transparência e design moderno
+* Barras animadas com feedback visual
+* Sistema de imagens dinâmicas conforme o estado da cidade
+
+---
+
+## 🚀 Tecnologias utilizadas
+
+* Java 17+
+* Java Swing (GUI)
+* Maven
+
+---
+
+## ▶️ Como executar o projeto
+
+### Pré-requisitos
+
+* Java JDK 17 ou superior
+* Maven instalado
+
+### Passos
 
 ```bash
-git clone https://github.com/eduardo-lim4/EcoCity.git
+mvn clean package
 ```
 
-### 2. Entrar na pasta
+Depois execute:
 
 ```bash
-cd EcoCity
-```
-
-### 3. Compilar
-
-```bash
-javac *.java
-```
-
-### 4. Executar
-
-```bash
-java Main
+java -cp target/classes com.ecocity.Main
 ```
 
 ---
 
-## 👥 Como contribuir
+## 📁 Estrutura do projeto
 
-1. Faça um fork ou clone do projeto
-2. Crie uma branch:
-
-```bash
-git checkout -b minha-feature
 ```
-
-3. Faça suas alterações
-
-4. Commit:
-
-```bash
-git commit -m "Minha melhoria"
-```
-
-5. Envie:
-
-```bash
-git push origin minha-feature
+src/
+ └── main/
+     ├── java/com/ecocity/
+     │    ├── Main.java
+     │    ├── Game.java
+     │    ├── Cidade.java
+     │    ├── Evento.java
+     │    ├── Tutorial.java
+     │    ├── AudioPlayer.java
+     │    └── UI components
+     └── resources/
 ```
 
 ---
 
-## 🚀 Ideias futuras
+## 🛠️ Melhorias implementadas
 
-* 🌫️ Efeito de poluição visual
-* 🏆 Sistema de pontuação
-* 💾 Sistema de salvar progresso
-* 🎵 Sons de eventos
-* 🏙️ Evolução visual da cidade
-
----
-
-## 📚 Objetivo acadêmico
-
-Este projeto foi desenvolvido como trabalho acadêmico com foco em:
-
-* Programação em Java
-* Interfaces gráficas (Swing)
-* Lógica de jogos
-* Educação ambiental
+* Correção de bugs críticos
+* Sistema de dificuldade progressiva
+* Refatoração (DRY)
+* Interface modernizada
+* Sistema de tutorial
+* Cache de imagens
+* Controle de estados (dinheiro, população, etc)
 
 ---
 
+## 💡 Algumas melhorias futuras
+
+* 🏆 Sistema de ranking (leaderboard)
+* 🌐 Ranking online
+* 🎵 Sistema de áudio mais avançado
+* 💾 Sistema de save/load
+* 🎮 Modos de jogo (desafio, infinito)
+
+---
+
+
+## 📜 Licença
+
+Este projeto é para fins educacionais.
